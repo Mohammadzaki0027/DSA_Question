@@ -1,16 +1,35 @@
 function triplet(N, arr, K) {
-  // Brute force approach is to used the three nested loop TC O(N)
-  for (let i = 0; i < N - 2; i++) {
-    for (let j = i + 1; j < N - 1; j++) {
-      for (let a = j + 1; a < N; a++) {
-        sum = arr[i] + arr[j] + arr[a];
-        if (sum === K) {
-          return "Yes";
-        }
-      }
+  // Brute force approach is to used the three nested loop TC O(N3)
+  // for (let i = 0; i < N - 2; i++) {
+  //   for (let j = i + 1; j < N - 1; j++) {
+  //     for (let a = j + 1; a < N; a++) {
+  //       sum = arr[i] + arr[j] + arr[a];
+
+  //     }
+  //   }
+  // }
+//   return "No";
+arr=arr.sort(function(a,b){
+    return a-b
+})
+for(let i=0;i<N-2;i++)
+{
+    l=i+1
+    r=N-1
+    while(l<r)
+    {
+        sum = arr[i] + arr[l] + arr[r];
+                if (sum === K) {
+                  return "Yes";
+                }else if(sum<K){
+l++
+                }else{
+                    r--
+                }
     }
-  }
-  return "No";
+}
+return "No"
+
 }
 
 function runProgram(input) {
@@ -36,7 +55,7 @@ if (process.env.USERNAME === "sw") {
     7
     3
     30 10 20
-   60`);
+  80`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
