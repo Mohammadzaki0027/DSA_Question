@@ -12,7 +12,7 @@ for(let i=0;i<K;i++){
 for(i=arr.length-1;i>=arr.length-K;i--)
 {
    max+=arr[i]
-   console.log("minsum",minsum)
+
 }
 console.log(max-minsum)
 }
