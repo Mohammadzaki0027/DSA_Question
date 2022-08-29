@@ -1,41 +1,46 @@
-function minandmax(N, arr, K){
-
-arr=arr.sort(function(a,b){
-    return a-b
-})
-let max=0
-let minsum=0
-
-for(let i=0;i<K;i++){
-  minsum+=arr[i]
-}
-for(i=arr.length-1;i>=arr.length-K;i--)
+function Digitsum(N, arr)
 {
-   max+=arr[i]
+    let ans=[]
+    for(let i=0;i<arr.length;i++)
+    {
+let z=sum(arr[i])
+ans.push(z)
+    }
+    console.log(ans.join(" "));
+}
+function sum(a)
+{
+    let sum=0
+    let s=a.toString()
+for(let i=0;i<s.length;i++)
+{
+sum+=Number(s[i])
+}
+return(sum)
+}
 
-}
-console.log(max-minsum)
-}
 function runProgram(input) {
     input = input.trim().split("\n");
     let line = 1;
     let t = +input[0];
     for (let i = 0; i < t; i++) {
-      let [N ,K]= input[line].trim().split(" ").map(Number);
+      let N= +input[line]
       line++;
       let arr = input[line].trim().split(" ").map(Number);
       line++;
   
     
-      let y = minandmax(N, arr, K);
+      let y = Digitsum(N, arr);
       //console.log(y);
     }
   }
   
   if (process.env.USERNAME === "sw") {
-    runProgram(`1
-    5 1
-    1 2 3 4 5`);
+    runProgram(`2
+    5
+    12 14 16 17 29
+    6
+    1 2 3 4 5 51`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -54,4 +59,3 @@ function runProgram(input) {
       process.exit(0);
     });
   }
-  
