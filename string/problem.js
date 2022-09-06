@@ -1,3 +1,5 @@
+// check the string present  in str2 is equal to str1 if equal then print yes else no also in quanity
+
 function ransomenote(N1, N2, str1, str2) {
   for (let i = 0; i < str2.length; i++) {
     let flag = false;
