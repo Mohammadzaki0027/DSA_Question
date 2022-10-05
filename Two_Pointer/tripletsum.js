@@ -8,28 +8,26 @@ function triplet(N, arr, K) {
   //     }
   //   }
   // }
-//   return "No";
-arr=arr.sort(function(a,b){
-    return a-b
-})
-for(let i=0;i<N-2;i++)
-{
-    l=i+1
-    r=N-1
-    while(l<r)
-    {
-        sum = arr[i] + arr[l] + arr[r];
-                if (sum === K) {
-                  return "Yes";
-                }else if(sum<K){
-l++
-                }else{
-                    r--
-                }
+  //   return "No";
+  arr = arr.sort(function (a, b) {
+    return a - b;
+  });
+  // 1 2 3 4 5 6
+  for (let i = 0; i < N - 2; i++) {
+    l = i + 1;
+    r = N - 1;
+    while (l < r) {
+      sum = arr[i] + arr[l] + arr[r];
+      if (sum === K) {
+        return "Yes";
+      } else if (sum < K) {
+        l++;
+      } else {
+        r--;
+      }
     }
-}
-return "No"
-
+  }
+  return "No";
 }
 
 function runProgram(input) {
