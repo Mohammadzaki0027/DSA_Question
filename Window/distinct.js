@@ -8,8 +8,7 @@ function longestuniquestr(str, ans) {
   let start = 0;
   for (let i = 0; i < n; i++) {
     if (str[i] in obj) {
-
-        start=Math.max(start,obj.get)
+      start = Math.max(start, obj.get);
     }
   }
 }

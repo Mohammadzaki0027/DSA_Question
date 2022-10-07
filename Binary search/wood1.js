@@ -1,33 +1,36 @@
 function wood(N, K, arr) {
   let l = 0;
-  let ans = -1;
-  let h = Math.max(...arr);
-  while (l <= h) {
-    let mid = l + Math.floor((h - l) / 2);
-    if (checksmaller(arr, K, mid)) {
+  let ans = 0;
+  let max = Math.max(...arr);
+  while (l <= max) {
+    let mid = l + Math.floor((max - l) / 2);
+    if (checker(arr, K, mid)) {
       ans = mid;
-      l = mid + 1;
+      l= mid + 1;
     } else {
-      h = mid - 1;
+      max = mid - 1;
     }
   }
-  return ans;
+   return ans;
 }
-function checksmaller(arr, K, mid) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] <= mid) continue;
 
-    sum = sum + (arr[i] - mid);
-  }
-  return sum >= K;
-}
 function runProgram(input) {
   input = input.trim().split("\n");
   let [N, K] = input[0].split(" ").map(Number);
   let arr = input[1].trim().split(" ").map(Number);
   let y = wood(N, K, arr);
   console.log(y);
+}
+
+function checker(arr, K, mid) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] <= mid) continue;
+
+    sum = sum + (arr[i] - mid);
+  }
+
+  return sum >= K;
 }
 
 if (process.env.USERNAME === "sw") {
