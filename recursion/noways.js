@@ -1,22 +1,22 @@
-function etopower(N, P) {
-  if (P == 0) return 1;
+function ways(N)
+{
+   if(N===0) return 1
+   if(N<0) return 0
 
-  return N ** P / fctorial(P) + etopower(N, P - 1);
+   return ways(N-1)+ways(N-2)+ways(N-3)
 }
-function fctorial(N) {
-  if (N == 1) return 1;
 
-  return N * fctorial(N - 1);
-}
 function runProgram(input) {
-  input = input.split("\n");
-  let [N, P] = input[0].split(" ").map(Number);
-  let y = etopower(N, P);
-  console.log(y.toFixed(4));
+  input = input.trim().split("\n");
+  var N = +input[0];
+
+  let y = ways(N);
+  console.log(y);
 }
 
 if (process.env.USERNAME === "sw") {
-  runProgram(`4 2`);
+  runProgram(`4
+    `);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");

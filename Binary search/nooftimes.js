@@ -7,6 +7,7 @@ function frequency(N, K, arr) {
     mid = l + Math.floor((r - 1) / 2);
     if (arr[mid] === K) {
       ans=mid
+      
       r = mid - 1;
     } else if (arr[mid] > K) {
       r = mid - 1;
