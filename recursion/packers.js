@@ -6,7 +6,8 @@
 // sent followed by the truck with capacity 2.
 // (3) -> The truck with capacity 3 is sent alone.
 
-
+// 3 3
+// 1 2 3
 
 let count = 0;
 function packer(k, n, arr) {
