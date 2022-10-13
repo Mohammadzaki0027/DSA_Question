@@ -1,0 +1,17 @@
+for inserting the 
+db.user.insertMany([{}])
+
+db.user.find({gender:"Male"}).pretty()
+
+
+db.user.find({relocate_to:"Japan"}).pretty()
+
+{ $sort: { <field1>: <sort order>, <field2>: <sort order> ... } }
+db.user.find({id:{$mod:[2,0]}}).pretty()
+
+db.user.find({age:{$gte:25}}).pretty()
+db.user.find({age:{$lte:50}}).pretty()
+db.user.find({relocate_to:"India"},{gender:"Female"}).pretty()
+db.user.count({relocate_to:"France"})
+db.user.find({native:"United States"},{relocate_to:"France"}).sort({ age:1})
+db.user.find().sort({ family_members:1,age:-1})
