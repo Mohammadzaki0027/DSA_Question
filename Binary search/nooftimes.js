@@ -1,11 +1,14 @@
 function frequency(N, K, arr) {
+  let ans = 0;
+  let uans = 0;
+  left(N, K, arr);
+  rigthside(N, K, arr);
   function left(N, K, arr) {
     let l = 0;
     let r = arr.length - 1;
-    let count = 0;
-    let ans = 0;
-    while (l <= r) {
-      mid = l + Math.floor((r - 1) / 2);
+
+    while (l < r) {
+      mid = l + Math.floor((r - l) / 2);
       if (arr[mid] === K) {
         ans = mid;
 
@@ -21,8 +24,7 @@ function frequency(N, K, arr) {
   function rigthside(N, K, arr) {
     let ul = 0;
     let ur = arr.length - 1;
-    let uans = 0;
-    while (ul <= ur) {
+    while (ul < ur) {
       mid = ul + Math.floor((ur - ul) / 2);
       if (arr[mid] === K) {
         ul = mid + 1;
@@ -33,8 +35,8 @@ function frequency(N, K, arr) {
         ul = mid + 1;
       }
     }
-    return uans - ans + 1;
   }
+  console.log(uans - ans + 1);
 }
 
 function runProgram(input) {
@@ -42,12 +44,11 @@ function runProgram(input) {
   let [N, K] = input[0].trim().split(" ").map(Number);
   let arr = input[1].trim().split(" ").map(Number);
   let y = frequency(N, K, arr);
-  console.log(y);
 }
 
 if (process.env.USERNAME === "sw") {
-  runProgram(`6 3
-  2 3 3 3 6 9`);
+  runProgram(`10 11
+  2 5 7 9 10 11 15 18 20 22`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
