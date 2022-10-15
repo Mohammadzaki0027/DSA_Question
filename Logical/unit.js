@@ -1,4 +1,4 @@
-function unit(N) {
+function consumed(N) {
   let value = N - 80;
   let unit = 0;
   if (value > 150) {
@@ -6,7 +6,7 @@ function unit(N) {
     value = value - 150;
   } else {
     unit = Math.floor(value / 3);
-    value=0
+    value = 0;
   }
 
   if (value >= 500) {
@@ -14,7 +14,7 @@ function unit(N) {
     value -= 500;
   } else {
     unit += Math.floor(value / 5);
-    value=0
+    value = 0;
   }
 
   if (value > 0) {
@@ -24,4 +24,4 @@ function unit(N) {
   console.log(unit);
 }
 
-unit(680);
+consumed(680);
