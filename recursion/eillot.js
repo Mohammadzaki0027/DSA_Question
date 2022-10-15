@@ -2,7 +2,7 @@ function mainfunction(N, str, start, end, middle, ans) {
   if (start > end) {
     return ans;
   }
-  //   abcdefghijk
+//   abcdefghijk
   middle = Math.floor((start + end) / 2);
   ans +=
     ans +
