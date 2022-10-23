@@ -1,4 +1,4 @@
-let str = "abc";
+let str = "abcd";
 let index = 0;
 let newstr = [];
 function sebstr(str, newstr, index) {
