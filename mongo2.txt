@@ -1,5 +1,4 @@
 db.userdata.insertMany([{}])
-
 db.userdata.find({region:"Asia"}).pretty()
 db.userdata.find({currency:"EUR"}).pretty()
 db.userdata.find({ timezones:{ gmtOffset: 3600}}).pretty()
