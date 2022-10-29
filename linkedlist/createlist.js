@@ -10,7 +10,6 @@ class LinkedList {
     this.head = null;
     this.size = 0;
   }
-
   add(data) {
     let node = new Node(data);
     let current;
@@ -18,21 +17,40 @@ class LinkedList {
       this.head = node;
     } else {
       current = this.head;
-
       while (current.next) {
-       
         current = current.next;
       }
-
       current.next = node;
     }
     this.size++;
     return this.head;
   }
+  removeele(data) {
+    let current = this.head;
+    let prev = null;
+    while (current != null) {
+      if (current.data === data) {
+        if (prev === null) {
+          this.head = current.next;
+        } else {
+          prev.next = current.next;
+        }
+
+        this.size--;
+        return current.data;
+      }
+      prev = current;
+      current = current.next;
+    }
+
+    return -1;
+  }
 }
 let li = new LinkedList();
 li.add(10);
 li.add(20);
-let y = li.add(30);
-
+li.add(30);
+li.add(40);
+li.add(50);
+let y = li.add(60);
 console.log(y);
