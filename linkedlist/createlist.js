@@ -13,11 +13,19 @@ class LinkedList {
 
   add(data) {
     let node = new Node(data);
-    console.log(node);
+    let current;
+    if (this.head === null) {
+      this.head = node;
+    } else {
+      current = this.head;
+
+      while (current.next) {
+        current = current.next;
+      }
+
+      // add node
+      current.next = node;
+    }
+    this.size++;
   }
 }
-
-let li = new LinkedList();
-
-li.add(20);
-
