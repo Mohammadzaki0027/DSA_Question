@@ -20,3 +20,4 @@ class LinkedList {
 let li = new LinkedList();
 
 li.add(20);
+
