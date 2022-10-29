@@ -35,14 +35,14 @@ class LinkedList {
         } else {
           prev.next = current.next;
         }
-
         this.size--;
         return current.data;
       }
+    
       prev = current;
       current = current.next;
-    }
 
+    }
     return -1;
   }
 }
@@ -52,5 +52,7 @@ li.add(20);
 li.add(30);
 li.add(40);
 li.add(50);
+li.removeele(20);
+
 let y = li.add(60);
 console.log(y);
