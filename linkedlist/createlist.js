@@ -1,17 +1,22 @@
-class Node{
-    constructor(data,next=null){
-this.data=data
-this.next=next
-    }
+class Node {
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
 }
 
-class LinkedList{
-    constructor(){
-        this.head=null
-        this.size=0
-    }
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
 
-    add(data){
-        
-    }
+  add(data) {
+    let node = new Node(data);
+    console.log(node);
+  }
 }
+
+let li = new LinkedList();
+
+li.add(20);
