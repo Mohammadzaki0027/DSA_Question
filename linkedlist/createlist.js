@@ -64,4 +64,5 @@ li.add(50);
 li.removeele(20);
 li.printList()
 let y = li.add(60);
-console.log(y);
+knodefromback()
+
