@@ -23,9 +23,16 @@ class LinkedList {
         current = current.next;
       }
 
-      // add node
+    
       current.next = node;
     }
     this.size++;
+  return this.head
   }
 }
+let li=new LinkedList()
+li.add(10)
+let y=li.add(20)
+console.log(y);
+
+
