@@ -20,19 +20,19 @@ class LinkedList {
       current = this.head;
 
       while (current.next) {
+       
         current = current.next;
       }
 
-    
       current.next = node;
     }
     this.size++;
-  return this.head
+    return this.head;
   }
 }
-let li=new LinkedList()
-li.add(10)
-let y=li.add(20)
+let li = new LinkedList();
+li.add(10);
+li.add(20);
+let y = li.add(30);
+
 console.log(y);
-
-
