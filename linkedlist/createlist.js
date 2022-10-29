@@ -38,13 +38,22 @@ class LinkedList {
         this.size--;
         return current.data;
       }
-    
-      prev = current;
+    prev = current;
       current = current.next;
-
-    }
+}
     return -1;
   }
+  printList() {
+    let curr = this.head;
+    let str = "";
+    while (curr) {
+        str += curr.data + " ";
+        curr = curr.next;
+    }
+    console.log(str);
+}
+
+
 }
 let li = new LinkedList();
 li.add(10);
@@ -53,6 +62,6 @@ li.add(30);
 li.add(40);
 li.add(50);
 li.removeele(20);
-
+li.printList()
 let y = li.add(60);
 console.log(y);
